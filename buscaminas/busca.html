@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" >
+    <title>Buscaminas</title>
+    <link rel="stylesheet" href="busca.css"></link>
+</head>
+<body>
+    <center>
+        <div class="settings">
+            <label for="mineCount">Mine Count</label>
+            <input type="number" name="mineCount" id="mineCount" value="40">
+            <span id="taimaa">00:00</span>
+            <label for="boardSize">Board Size</label>
+            <input type="number" name="boardSize" id="boardSize" value="18">
+            <button type="button" onclick="regenBoard()">✅</button>
+        </div>
+        <div class="tablero"></div>
+    </center>
+</body>
+<script src="busca.js"></script>
+</html>

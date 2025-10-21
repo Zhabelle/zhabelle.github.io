@@ -1,0 +1,55 @@
+/* @font-face {
+    font-family: 'sevment';
+    src: url("./Seven\ Segment.ttf");
+} */
+
+:root {
+    --text-borde-color: #404040;
+    --text-borde-color1: #d0d0d0;
+}
+
+#taimaa {
+    background-color: #200000;
+    width: 2.275em;
+    font-size: 2em;
+    margin: 1px;
+    color: red;
+}
+
+div.tablero {
+    display: grid;
+    width: 42vw;
+    height: 42vw;
+    user-select: none;
+
+    .tile {
+        width: 100%;
+        height: 100%;
+
+        &.discovered {
+            background-color: rgb(189, 189, 189);
+        }
+
+        &.discovered, &.hiddenMine {
+            font-weight: 900;
+            font-size: 1.5em;
+            text-shadow: 
+                1px 1px var(--text-borde-color1), -1px -1px var(--text-borde-color1), 1px -1px var(--text-borde-color1), -1px 1px var(--text-borde-color1),
+                2px 2px var(--text-borde-color), -2px -2px var(--text-borde-color), 2px -2px var(--text-borde-color), -2px 2px var(--text-borde-color);
+        }
+
+        &.flagged::after {
+            content: "🚩";
+        }
+
+        &.badFlag::after {
+            content: "🚩";
+            color: transparent;
+            text-shadow: 0 0 gray;
+        }
+
+        &.hiddenMine {
+            color: gray;
+        }
+    }
+}

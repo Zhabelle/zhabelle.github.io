@@ -1,0 +1,15 @@
+body {
+    background-color: #100808;
+}
+
+canvas {
+    width: 75vh;
+    height: 75vh;
+    max-width: 75vh;
+    max-height: 75vh;
+    justify-self: center;
+    place-self: center;
+    border: 1px solid red;
+    margin: 0 auto;
+    display: block;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Ruleta</title>
+    <link rel="stylesheet" href="ruleta.css">
+</head>
+<body>
+    <div class="app">
+        <div class="opciones"></div>
+        <div class="cosa">
+            <div class="rouletteHolder">
+                <div id="ruleta"></div>
+            </div>
+        </div>
+        <div class="entries">
+            <h2>Ruleta</h2>
+            <input type="text" name="entryInput" id="entryInput">
+            <button type="button" onclick="addEntry()">Añadir</button>
+            <div name="" id="entryList"></div>
+            <textarea name="entryListEditor" id="entryListEditor" style="display: none;"></textarea>
+            <div class="entrySettings">
+                <button onclick="toggleEntryEditor(this)">📝</button>
+                <button name="saveRuletaBtn" onclick="toggleSaveModal(true)">💾</button>
+            </div>
+            <hr>
+            <h2>Ruletas guardadas</h2>
+            <div class="loadRoulettes">
+                <div>
+                    <select name="savedRouletteSelector" id="savedRouletteSelector" disabled="disabled"></select>
+                    <button type="button" disabled="disabled" id="loadSavedRoulette" onclick="loadSavedRoulette()">✅</button>
+                    <button type="button" disabled="disabled" id="removeSavedRoulette" onclick="removeSavedRoulette()">🗑️</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio src="clave.wav" style="display: none;" id="audioClave"></audio>
+    <div class="modal" hidden>
+        <center class="modalContent">
+            <h2 id="modalTitle">Ha ganado:</h2>
+            <div class="winnerStuff">
+                🎉
+                <h1 id="winnerText">winner</h1>
+                🎉
+            </div>
+            <div>
+                <button type="button" onclick="hideWinnerEntry()">👁️</button>
+                <button type="button" onclick="toggleModal(false)">✅</button>
+                <button type="button" onclick="deleteWinnerEntry()">🗑️</button>
+            </div>
+            <button type="button" class="modalClose" onclick="toggleModal(false)">X</button>
+        </center>
+    </div>
+    <div class="modal saveRouletteModal" hidden>
+        <div class="modalContent">
+            <h1>Guardar Ruleta</h1>
+            <div>
+                <label for="ruletaName">Nombre: </label>
+                <input type="text" name="ruletaName" id="ruletaName">
+            </div>
+            <button type="button" onclick="saveRoulette()">💾</button>
+            <button type="button" class="modalClose" onclick="toggleSaveModal(false)">X</button>
+        </div>
+    </div>
+</body>
+<script src="ruleta.js"></script>
+</html>
